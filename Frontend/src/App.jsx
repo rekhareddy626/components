@@ -2,8 +2,8 @@ import {Routes,Route,Router} from 'react-router-dom'
 import Navbar from './component/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
-import Contact from './Pages/Contact'
-import Service from './Pages/Service'
+import Contact from './pages/Contact'
+import Service from './pages/Service'
 import UseState from './Hooks/UseState'
 import Login from './Auth/Login'
 import Hook from './Hooks/Hook'
@@ -11,6 +11,7 @@ import UseEffect from './Hooks/UseEffect'
 import UseEffectApi from './Hooks/UseEffectApi'
 import Signup from './Auth/Signup'
 import UseRef from './Hooks/UseRef'
+import UseReducer from './Hooks/UseReducer'
 const App = () => {
   return (
     <>
@@ -30,6 +31,8 @@ const App = () => {
           <Route path='useEffect' element={<UseEffect/>}/>
           <Route path='useEffectApi' element={<UseEffectApi />}/>
           <Route path='useRef' element={<UseRef/>}/>
+          <Route path='useReducer' element={<UseReducer/>}/>
+
         </Route>
         
         </Routes>
