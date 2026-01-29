@@ -12,6 +12,8 @@ import UseEffectApi from './Hooks/UseEffectApi'
 import Signup from './Auth/Signup'
 import UseRef from './Hooks/UseRef'
 import UseReducer from './Hooks/UseReducer'
+import UseMemo from './Hooks/UseMemo'
+import UseCallback from './Hooks/UseCallback'
 const App = () => {
   return (
     <>
@@ -24,6 +26,7 @@ const App = () => {
         <Route path='/useState' element={<UseState/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/Signup' element={<Signup/>}/>
+        <Route path='/UseMemo' element={<UseMemo/>}/>
         {/*Hooks*/}
       
         <Route path='/hook' element={<Hook/>}>
@@ -32,6 +35,9 @@ const App = () => {
           <Route path='useEffectApi' element={<UseEffectApi />}/>
           <Route path='useRef' element={<UseRef/>}/>
           <Route path='useReducer' element={<UseReducer/>}/>
+          <Route path='useMemo' element={<UseMemo/>}/>
+          <Route path='usecallback' element={<UseCallback/>}/>
+          
 
         </Route>
         
