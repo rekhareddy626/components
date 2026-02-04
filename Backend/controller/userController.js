@@ -1,19 +1,30 @@
-let users=[];
-let id=1;
-
-exports.createUser=(req,res)=>{
+// let users=[];
+// let id=1;
+const User=require("../models/user")
+exports.createUser=async(req,res)=>{
+    try{
     const{name,email}=req.body;
-    const newUser={
-        id:id++,
-        name,
-        email
-
-    }
-    users.push(newUser);
-    res.status(200).json(newUser)
+    const exist=await User.findOne({email})
+    if(exist)
+        return res.status(401).json({message:"User already exist"})
+    const user=await User.create({
+       name,
+       email
+    })
+    res.status(200).json(user);
+}catch(err){
+    res.status(500).send(err);
 }
-exports.getUser=(req,res)=>{
-    res.status(200).json(users);
+}
+exports.getUser=async(req,res)=>{
+    try{
+        const users=await User.find();
+        res.status(200).json(users);
+
+    }catch(err){
+        res.status(500).json(users);
+    }
+
 }
 exports.getUserById=(req,res)=>{
     const user=users.find((u)=>u.id===parseInt(req.params.id));
